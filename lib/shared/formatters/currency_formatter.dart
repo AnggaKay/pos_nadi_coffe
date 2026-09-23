@@ -1,5 +1,6 @@
 String formatRupiah(int amount) {
-  final digits = amount.toString();
+  final sign = amount < 0 ? '-' : '';
+  final digits = amount.abs().toString();
   final groups = <String>[];
   var end = digits.length;
 
@@ -9,5 +10,5 @@ String formatRupiah(int amount) {
   }
   groups.insert(0, digits.substring(0, end));
 
-  return 'Rp${groups.join('.')}';
+  return 'Rp $sign${groups.join('.')}';
 }

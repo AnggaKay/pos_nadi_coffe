@@ -33,6 +33,46 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+**/secrets/
+**/secrets.*
+**/credentials/
+**/service-account*.json
+**/*-service-account*.json
+**/credentials*.json
+**/*credential*.json
+**/*secret*.json
+
+# Signing keys and private certificates
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.mobileprovision
+*.provisionprofile
+*.pem
+*.key
+android/key.properties
+
+# Local databases and runtime data
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Generated platform/build artifacts
+/android/.gradle/
+/ios/Pods/
+/ios/.symlinks/
+/macos/Pods/
+/windows/flutter/ephemeral/
+/linux/flutter/ephemeral/
+
 # Symbolication related
 app.*.symbols
 

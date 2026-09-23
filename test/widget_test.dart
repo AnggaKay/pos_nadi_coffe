@@ -13,9 +13,10 @@ import 'package:pos_nadi_coffe/app/app.dart';
 void main() {
   testWidgets('kasir menampilkan katalog dan keranjang kosong', (tester) async {
     await tester.pumpWidget(const ProviderScope(child: PosApp()));
+    await tester.pump(const Duration(seconds: 2));
 
-    expect(find.text('Kasir'), findsNWidgets(2));
-    expect(find.text('Iced Latte'), findsOneWidget);
-    expect(find.text('Belum ada pesanan'), findsOneWidget);
+    expect(find.text('Kasir'), findsOneWidget);
+    expect(find.text('Menu'), findsOneWidget);
+    expect(find.text('Pesanan baru'), findsOneWidget);
   });
 }

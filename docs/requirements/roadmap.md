@@ -23,6 +23,8 @@
 - Stock opname.
 - Minimum stock.
 
+Detailed execution order: `next-phases.md`.
+
 ## Fase 3: Cloud dan Sync
 
 - Supabase PostgreSQL.
