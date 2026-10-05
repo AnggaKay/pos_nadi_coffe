@@ -1,6 +1,6 @@
 # Next Phases
 
-The local cashier flow is the current source of truth. Cloud and dashboard work waits until local stock behavior is reliable.
+The local cashier flow remains the source of truth. To move the project forward quickly, Owner UI prototyping can proceed with clearly labeled demo data while cashier and backend gaps remain tracked. Do not present prototype values as live monitoring.
 
 ## Phase 2: Inventory Foundation
 
@@ -30,7 +30,19 @@ The local cashier flow is the current source of truth. Cloud and dashboard work 
 5. Upload completed orders and ledger events.
 6. Verify offline-to-online recovery without duplicate records.
 
-## Phase 5: Owner Monitoring
+## Phase 5: Owner Monitoring Prototype — Start Now
+
+1. Set up separate Next.js Owner web app at `apps/owner-web`.
+2. Define dashboard hierarchy, navigation, and responsive layout.
+3. Build overview with clearly labeled demo data.
+4. Design sales trends, recent transactions, and transaction detail.
+5. Design low-stock, waste, adjustment, void/refund, and stock ledger views.
+6. Include loading, empty, stale, offline, and error states.
+7. Review Owner flow before wiring cloud data.
+
+Flow: `../flows/owner-monitoring-flow.md`.
+
+## Phase 6: Owner Monitoring Integration
 
 1. Add owner authentication.
 2. Add sales overview.
@@ -49,8 +61,6 @@ The local cashier flow is the current source of truth. Cloud and dashboard work 
 
 ## Current Queue
 
-- Inventory tables: ingredients, recipes, recipe versions, units.
-- Recipe-based stock consumption.
-- Opening stock and adjustment UI.
-- Order number and shift foundation.
-- Printer formatter and tests: `docs/hardware/printer-plan.md`.
+- Continue Owner prototype UI and review its navigation and monitoring priorities.
+- Cashier operational backlog is tracked in `mvp.md`; it does not block Owner UI design.
+- Before live monitoring: finish reliable inventory/order event data, printer/device verification as needed, then sync and authentication foundation.

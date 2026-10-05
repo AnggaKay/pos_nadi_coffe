@@ -10,7 +10,7 @@ Menyediakan POS counter-service yang cepat untuk kasir, tetap dapat digunakan of
 Customer
    │
    ▼
-Huawei Pad POS
+apps/cashier · Huawei Pad POS
 ├── Order dan pembayaran
 ├── Nomor antrean
 ├── SQLite lokal
@@ -29,7 +29,7 @@ Cloud Backend
 └── Sync endpoint
         │
         ▼
-Owner Dashboard
+apps/owner-web · Owner Dashboard (browser)
 ├── Penjualan
 ├── Stok
 ├── Produk habis
@@ -58,6 +58,7 @@ Owner Dashboard
 
 ### Dashboard
 
+- Aplikasi web terpisah dari POS, dengan repository dan deploy boundary sendiri di dalam workspace monorepo.
 - Next.js dan TypeScript.
 - Tailwind CSS.
 - TanStack Query.
@@ -76,3 +77,15 @@ Owner Dashboard
 ## Batas MVP
 
 Belum termasuk multi-outlet, loyalty, delivery, table management, KDS khusus, purchase order, dan payment gateway.
+
+## Struktur Workspace
+
+```text
+apps/
+├── cashier/       # Flutter POS, local-first
+└── owner-web/     # Next.js Owner Dashboard, prototype data demo
+docs/              # Dokumentasi lintas aplikasi
+supabase/          # Migrasi dan backend bersama saat fase integrasi
+```
+
+Owner web dan POS adalah aplikasi terpisah yang dirancang memakai backend bersama. Owner web saat ini masih prototype; autentikasi, cloud sync, dan monitoring live belum tersedia.

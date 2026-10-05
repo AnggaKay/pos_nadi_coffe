@@ -28,9 +28,15 @@ migrate_working_dir/
 **/ios/Flutter/.last_build_id
 .dart_tool/
 .flutter-plugins-dependencies
+.next/
+node_modules/
+out/
+.turbo/
+.vercel/
+*.tsbuildinfo
 .pub-cache/
 .pub/
-/build/
+**/build/
 /coverage/
 
 # Local environment and secrets
@@ -66,12 +72,12 @@ android/key.properties
 *.db-journal
 
 # Generated platform/build artifacts
-/android/.gradle/
-/ios/Pods/
-/ios/.symlinks/
-/macos/Pods/
-/windows/flutter/ephemeral/
-/linux/flutter/ephemeral/
+**/android/.gradle/
+**/ios/Pods/
+**/ios/.symlinks/
+**/macos/Pods/
+**/windows/flutter/ephemeral/
+**/linux/flutter/ephemeral/
 
 # Symbolication related
 app.*.symbols
@@ -80,6 +86,6 @@ app.*.symbols
 app.*.map.json
 
 # Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+**/android/app/debug
+**/android/app/profile
+**/android/app/release

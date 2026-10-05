@@ -25,7 +25,19 @@
 
 Detailed execution order: `next-phases.md`.
 
-## Fase 3: Cloud dan Sync
+## Fase 3: Prototype Owner Monitoring
+
+Mulai sekarang untuk mempercepat rancangan produk; fase ini adalah UI prototype, bukan integrasi data aktual.
+
+- Owner overview web di `apps/owner-web` dengan data demo berlabel.
+- Rancangan tren penjualan dan transaksi terbaru.
+- Rancangan stok kritis dan histori aktivitas operasional.
+- Rancangan status device/sync beserta empty, error, dan stale states.
+- Validasi flow dan hierarki informasi sebelum backend.
+
+Flow acuan: `../flows/owner-monitoring-flow.md`. Flutter Owner preview tidak menjadi target produk; Owner adalah aplikasi web terpisah.
+
+## Fase 4: Cloud dan Sync
 
 - Supabase PostgreSQL.
 - Authentication owner.
@@ -36,7 +48,7 @@ Detailed execution order: `next-phases.md`.
 - Device health.
 - Backup.
 
-## Fase 4: Owner Dashboard
+## Fase 5: Owner Dashboard Terhubung
 
 - Login owner.
 - Sales overview.
@@ -47,7 +59,7 @@ Detailed execution order: `next-phases.md`.
 - Filter tanggal.
 - Export laporan.
 
-## Fase 5: Pengembangan Bertahap
+## Fase 6: Pengembangan Bertahap
 
 Tambahkan berdasarkan kebutuhan nyata:
 

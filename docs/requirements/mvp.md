@@ -4,6 +4,12 @@
 
 Mendukung operasional counter-service dengan satu Huawei Pad dan satu printer thermal, serta menyediakan data yang cukup untuk monitoring owner tanpa mengubah fondasi kasir di masa depan.
 
+## Status Saat Ini
+
+UI kasir dan laporan lokal sudah cukup untuk preview dan uji alur utama. Untuk mempercepat penyelesaian rancangan produk, pengembangan berikutnya dimulai dari flow Owner Monitoring. Butir kasir yang belum siap operasional tetap dicatat sebagai backlog dan dikerjakan setelah rancangan Owner disepakati.
+
+Dashboard Owner yang sedang dirancang adalah prototype UI. Angka contoh/demo tidak mewakili data outlet dan tidak berasal dari backend.
+
 ## Wajib Kasir
 
 ### Order
@@ -99,3 +105,31 @@ Dashboard awal minimal menyediakan:
 6. Sync dapat diulang tanpa duplikasi.
 7. Owner dapat melihat penjualan dan stok dari luar kafe.
 8. Owner dapat melihat kapan data terakhir tersinkronisasi.
+
+## Backlog Kasir Sebelum Operasional Penuh
+
+Backlog ini bukan penghalang untuk memulai rancangan Owner. Prioritas dapat disesuaikan setelah prototype Owner ditinjau.
+
+### P0 — Selesaikan sebelum penggunaan operasional
+
+- [ ] Uji end-to-end di Huawei Pad dengan database persisten dan data outlet yang benar.
+- [ ] Validasi alur stok: opening stock, restock, resep per versi, konsumsi penjualan, waste, adjustment, opname, dan reversal.
+- [ ] Lengkapi otorisasi PIN/role untuk void, refund, dan tindakan sensitif.
+- [ ] Uji pemulihan setelah aplikasi ditutup paksa, perangkat restart, dan penyimpanan penuh.
+- [ ] Integrasikan dan uji printer thermal untuk customer receipt dan kitchen ticket; preview struk saja belum memenuhi kebutuhan cetak.
+- [ ] Pastikan angka penjualan, HPP, laba kotor, pembayaran, dan rekonsiliasi shift konsisten dengan transaksi sumber.
+
+### P1 — Dibutuhkan sebelum monitoring lintas perangkat
+
+- [ ] Tetapkan identitas outlet, user, dan device yang stabil.
+- [ ] Implementasikan sync queue, retry, idempotency, dan penanganan event gagal/konflik.
+- [ ] Implementasikan autentikasi Owner dan backend/cloud, termasuk aturan akses data.
+- [ ] Sinkronkan order, payment, void/refund, stock movement, shift, audit, dan status sync.
+- [ ] Uji kondisi offline-ke-online agar data tidak hilang atau terduplikasi.
+- [ ] Implementasikan export laporan sebagai fallback.
+
+### P2 — Penyempurnaan setelah flow inti
+
+- [ ] Perbaiki analitik rentang tanggal khusus dan ekspor berdasarkan filter.
+- [ ] Tambahkan alert stok kritis dan notifikasi operasional.
+- [ ] Evaluasi kebutuhan multi-device/outlet setelah alur satu perangkat terbukti stabil.
